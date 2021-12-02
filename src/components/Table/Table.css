@@ -1,0 +1,12 @@
+table {
+    border: 1px solid black;
+  }
+
+td, th {
+    background-color: seashell;
+    border: 1px solid white;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
