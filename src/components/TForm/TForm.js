@@ -28,7 +28,9 @@ class TForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    //envio de dato al estado padre, llamando a metodo
     this.props.adddato(this.state);
+    //inicializa el form
     this.setState({
         nombre: "",
         apellidos: "",

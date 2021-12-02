@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import Table from './components/Table';
+import TTable from './components/TTable';
 import TForm from './components/TForm/TForm';
 import React from 'react';
 
@@ -11,9 +11,9 @@ class App extends React.Component {
     this.state = {
       cabecera: ['Nombre', 'Apellidos', 'Fecha de Nacimiento', 'Contratado', 'Borrar'],
       datos: [
-        ['Pepa', 'Flores', '2/02/2002', 'Si', 'borrar'],
-        ['Luis', 'Garcia', '8/8/1998', 'No', 'borrar'],
-        ['Tomas', 'Rodriguez', '7/7/1997', 'Si', 'borrar']
+        {nombre: 'Pepa', apellidos: 'Flores', fecha: '2/02/2002', contratado: true, boton: 'borrar'},
+        {nombre: 'Luis', apellidos: 'Garcia', fecha: '8/8/1998', contratado: false, boton: 'borrar'},
+        {nombre: 'Tomas', apellidos: 'Rodriguez', fecha: '7/7/1997', contratado: true, boton: 'borrar'}
       ]
     }
 
@@ -41,7 +41,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header ejercicio="Empleados con formulario y material-ui"></Header>
-        <Table cabeceras={this.state.cabecera} filas={this.state.datos} handleClick={this.handleClick}></Table>
+        <TTable cabeceras={this.state.cabecera} filas={this.state.datos} handleClick={this.handleClick}></TTable>
         <TForm adddato={this.handleNewRow}></TForm>
       </div>
     );
